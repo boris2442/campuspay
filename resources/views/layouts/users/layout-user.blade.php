@@ -20,23 +20,9 @@
 </head>
 
 <body>
-
-
-
-
-    {{-- <div class="flex h-screen bg-gray-100 dark:bg-gray-900">
-        @include('components.dashboard.aside')
-        <div class="flex-1 flex flex-col">
-            @include('components.dashboard.header')
-            <main class="flex-1 overflow-y-auto p-6 ml-64">
-                @yield('content')
-            </main>
-        </div>
-    </div> --}}
-    {{-- @include('components.dashboard.header') --}}
-
-
-    <div class="flex h-screen bg-gray-100 dark:bg-gray-900">
+    <div class="flex h-screen
+     {{-- bg-gray-100 --}}
+      dark:bg-gray-900">
         {{-- @include('components.dashboard.aside') --}}
         <div class="flex-1 flex flex-col">
             {{-- @include('components.dashboard.header') --}}

@@ -15,6 +15,7 @@ use App\Http\Controllers\Admin\ImportFiliereController;
 use App\Http\Controllers\Admin\ImportEtudiantController;
 use App\Http\Controllers\Admin\SpecialiteImportController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\PresentationController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -139,7 +140,7 @@ Route::get('/', function () {
         Route::post('/niveaux/import', [ImportNiveauController::class, 'import'])->name('niveaux.import');
     })->middleware(['auth', 'admin', 'comptable']);
 // });
-Route::view('/presentation', 'pages.presentation')->name('presentation');
+Route::get('/presentation', [PresentationController::class, 'index'])->name('presentation');
 require __DIR__ . '/auth.php';
 Route::get('/{any}', function () {
     return view('pages.notFound.pageNotFound');

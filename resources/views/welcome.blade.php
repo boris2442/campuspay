@@ -61,7 +61,7 @@
     <div id="particles-js" class="fixed top-0 left-0 w-full h-full -z-10"></div>
 
     <main class="flex-grow p-4 flex flex-wrap  items-center justify-center gap-12 text-center">
-        <div class="max-w-xl w-full space-y-6">
+        <div class="max-w-xl w-full space-y-6 justify-center  items-center">
             <h1 id="hero-title"
                 class="text-2xl sm:text-3xl md:text-5xl font-extrabold leading-tight text-white dark:text-gray-900">
                 <span id="typewriter"></span>
@@ -71,7 +71,9 @@
                 Conçue pour les établissements d’enseignement, cette plateforme vous aide à centraliser la gestion des
                 étudiants, suivre les paiements, et éditer des rapports rapidement.
             </p>
-            <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center">
+            <div
+             {{-- class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center" --}}
+             >
                 {{-- <a href="/register"
                     class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
                     Créer un compte
@@ -79,7 +81,7 @@
                 {{-- @if(Route::has('login')) --}}
                 {{-- @guest --}}
                 <a href="{{ route('presentation') }}"
-                    class="px-6 py-3 border-2 border-white hover:bg-blue-50 dark:hover:bg-gray-700 text-blue-600 dark:text-blue-400 font-semibold rounded-lg transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 bg-white">
+                    class="px-6 py-3 border-2 border-white hover:bg-blue-50 dark:hover:bg-gray-700 text-blue-600 dark:text-blue-400 font-semibold rounded-lg transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 bg-white max-w-[200px]">
                     Voir plus
                 </a>
                 {{-- @endguest --}}
