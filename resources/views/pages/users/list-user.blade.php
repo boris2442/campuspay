@@ -1,20 +1,23 @@
 @extends('layouts.admin.layout-admin')
 @section('title', 'Liste des Étudiants')
 @section('content')
-<section class="p-4">
-    <h1 class="text-2xl font-bold mb-6 text-center text-blue-500">Liste des Étudiants</h1>
-    @session('success')
-    <div class="bg-green-100 text-green-800 p-4 rounded-md mb-4">
-        {{ session('success') }}
-    </div>
-    @endsession
+<section class="p-4 bg-gray-50 dark:bg-gray-900 min-h-screen">
+    <div class="w-full max-w-7xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 md:p-8">
+        <h1 class="text-2xl md:text-3xl font-bold mb-8 text-center text-blue-600 flex items-center justify-center gap-2">
+            <i class="fa fa-users"></i> Liste des Étudiants
+        </h1>
 
+        @if(session('success'))
+        <div class="bg-green-100 text-green-800 p-4 rounded-md mb-4 flex items-center gap-2">
+            <i class="fa fa-check-circle"></i>
+            {{ session('success') }}
+        </div>
+        @endif
 
-    {{-- <div class="overflow-x-auto"> --}}
         {{-- BLOC TOTAL + ACTIONS --}}
         <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-6 gap-4">
-            {{-- Affichage du total --}}
-            <div class="bg-green-500 text-white px-5 py-2 rounded-md hover:bg-green-600 transition">
+            <div class="bg-green-500 text-white px-5 py-2 rounded-md flex items-center gap-2">
+                <i class="fa fa-list"></i>
                 @if($filtre === 'nom')
                 Total pour ce nom : {{ $students->total() }}
                 @elseif($filtre === 'sexe')
@@ -27,74 +30,57 @@
                 Total étudiants : {{ $totalEtudiants }}
                 @endif
             </div>
-
-            {{-- Boutons d’action --}}
             <div class="flex flex-wrap gap-4">
                 <a href="{{ route('students.create') }}"
-                    class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition">
-                    ➕ Ajouter un étudiant
+                    class="flex items-center gap-2 bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 transition shadow">
+                    <i class="fa fa-user-plus"></i> Ajouter un étudiant
                 </a>
                 <a href="{{ route('frais.exportPdfUser') }}"
-                    class="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 transition">
-                    📄 Exporter en PDF
+                    class="flex items-center gap-2 bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 transition shadow">
+                    <i class="fa fa-file-pdf"></i> Exporter PDF
                 </a>
             </div>
         </div>
 
         {{-- FORMULAIRE DE RECHERCHE --}}
         <form method="get" action="{{ route('students.index') }}"
-            class="bg-gray-50 p-4 rounded-lg shadow-sm mb-6 space-y-4">
-            {{-- Filtres --}}
-            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 items-center">
+            class="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg shadow-sm mb-6 space-y-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 <input type="text" name="name" placeholder="Rechercher par nom" value="{{ request('name') }}"
                     class="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 w-full" />
-
                 <input type="text" name="email" placeholder="Rechercher par Email" value="{{ request('email') }}"
                     class="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 w-full" />
-
                 <select name="sexe"
                     class="border border-gray-300 rounded-md px-3 py-2 bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-400 w-full">
                     <option value="">Filtrer les étudiants par sexe</option>
                     <option value="Masculin" {{ request('sexe')=='Masculin' ? 'selected' : '' }}>Masculin</option>
                     <option value="Feminin" {{ request('sexe')=='Feminin' ? 'selected' : '' }}>Feminin</option>
                 </select>
-
                 <input type="text" name="annee_naissance" placeholder="Année de naissance (ex: 2002)"
                     value="{{ request('annee_naissance') }}"
                     class="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 w-full" />
             </div>
-
-            {{-- Boutons --}}
-            <div class="flex flex-wrap items-center gap-4">
-                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition">
-                    🔍 Recherche
+            <div class="flex flex-wrap items-center gap-4 mt-4">
+                <button type="submit" class="flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition">
+                    <i class="fa fa-search"></i> Recherche
                 </button>
                 <a href="{{ route('students.index') }}"
-                    class="bg-gray-200 text-gray-700 px-4 py-2 rounded-md hover:bg-gray-300 transition">
-                    🔄 Réinitialiser
+                    class="flex items-center gap-2 bg-gray-200 text-gray-700 px-4 py-2 rounded-md hover:bg-gray-300 transition">
+                    <i class="fa fa-undo"></i> Réinitialiser
                 </a>
             </div>
         </form>
 
         {{-- IMPORT EXCEL --}}
         <form action="{{ route('etudiants.import') }}" method="POST" enctype="multipart/form-data"
-            class="mb-6 bg-white p-4 rounded-md shadow-sm">
+            class="mb-6 bg-white dark:bg-gray-800 p-4 rounded-md shadow-sm flex flex-col sm:flex-row gap-4 items-center">
             @csrf
-            <div class="flex gap-4 items-center">
-                <input type="file" name="file" required class="border px-3 py-2 rounded-md w-full max-w-sm" />
-                <button type="submit"
-                    class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition">
-                    📥 Importer
-                </button>
-            </div>
+            <input type="file" name="file" required class="border px-3 py-2 rounded-md w-full max-w-sm" />
+            <button type="submit"
+                class="flex items-center gap-2 bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 transition">
+                <i class="fa fa-upload"></i> Importer
+            </button>
         </form>
-
-        {{-- MESSAGES DE SESSION --}}
-        @if(session('success'))
-        <div class="bg-green-100 text-green-800 p-4 rounded mb-4 shadow-sm">
-            {{ session('success') }}
-        </div>
-        @endif
 
         @error('file')
         <div class="bg-red-100 text-red-800 p-4 rounded mb-4 shadow-sm">
@@ -112,7 +98,6 @@
             </ul>
         </div>
         @endif
-
 
         <div class="overflow-x-auto bg-white dark:bg-gray-800 rounded-lg shadow mb-6">
             <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700 text-sm text-left">
@@ -162,11 +147,10 @@
                         <td class="px-4 py-3">{{ $student->telephone }}</td>
                         <td class="px-4 py-3 space-x-2">
                             <a href="{{ route('students.edit', $student->id) }}"
-                                class="text-blue-600 hover:text-blue-800" data-typpy-content="editer un apprenant"
-                                data-typpy-placement="top" data-tippy-theme="light-border">
+                                class="text-blue-600 hover:text-blue-800" data-tippy-content="Éditer un apprenant"
+                                data-tippy-placement="top" data-tippy-theme="light-border">
                                 <i class="fa fa-edit"></i>
                             </a>
-
                             <form method="POST" action="{{ route('students.delete', $student->id) }}"
                                 class="inline-block"
                                 onsubmit="return confirm('Confirmer la suppression de cet étudiant ?')">
@@ -175,7 +159,7 @@
                                 <button type="submit" data-tippy-content="Supprimer l'étudiant"
                                     data-tippy-placement="top" data-tippy-theme="light-border"
                                 >
-                                    <i class=" fa fa-trash text-red-600 hover:text-red-800"></i>
+                                    <i class="fa fa-trash text-red-600 hover:text-red-800"></i>
                                 </button>
                             </form>
                         </td>
@@ -183,17 +167,10 @@
                     @endforeach
                 </tbody>
             </table>
-
-            {{-- Pagination --}}
             <div class="px-4 py-3 border-t dark:border-gray-700">
                 {{ $students->links() }}
             </div>
         </div>
-
-        {{--
-    </div> --}}
+    </div>
 </section>
-
-
-
 @endsection
