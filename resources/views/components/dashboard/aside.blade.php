@@ -42,7 +42,7 @@
 <aside id="sidebar"
     class="min-w-64 bg-white dark:bg-gray-800 shadow-lg min-h-screen fixed z-40 left-0 top-0 transform -translate-x-full md:translate-x-0 transition-transform duration-300 md:fixed md:block block md:min-w-64 "
     style="width: 16rem;">
-    {{-- {{ route('students.index') }} --}}
+    {{ route('students.index') }}
     <div class="h-16 flex items-center justify-center uppercase bg-blue-600 text-white font-bold text-xl ">
         CampusPay
     </div>
