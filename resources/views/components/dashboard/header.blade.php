@@ -1,15 +1,3 @@
-{{--
-<header class="h-16 bg-white dark:bg-gray-800 shadow flex items-center px-6 ">
-    <div class="flex-1">
-
-    </div>
-    <div class="flex items-center space-x-4">
-        <span class="text-gray-700 dark:text-gray-200">Bienvenue, Utilisateur</span>
-        <a href="#" class="text-red-500 hover:text-red-700">Déconnexion</a>
-    </div>
-</header> --}}
-
-
 
 <!-- Top bar -->
 <!-- Top bar -->
