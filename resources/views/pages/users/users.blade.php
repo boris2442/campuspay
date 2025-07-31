@@ -5,7 +5,7 @@
     <div class="w-full max-w-7xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 md:p-8">
         <h1
             class="text-2xl md:text-3xl font-bold mb-8 text-center text-blue-600 flex items-center justify-center gap-2">
-            <i class="fa fa-students"></i> Liste des etudiants
+            <i class="fa fa-users"></i> Liste des utilisateurs
         </h1>
 
         @if(session('success'))
@@ -18,24 +18,24 @@
         {{-- BLOC TOTAL + ACTIONS --}}
         <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-6 gap-4">
 
-            <div class="bg-green-500 text-white px-5 py-2 rounded-md flex items-center gap-2">
+            {{-- <div class="bg-green-500 text-white px-5 py-2 rounded-md flex items-center gap-2">
                 <i class="fa fa-list"></i>
                 @if($filtre === 'nom')
-                Total pour ce nom : {{ $students->total() }}
+                Total pour ce nom : {{ $users->total() }}
                 @elseif($filtre === 'sexe')
-                Total pour ce sexe : {{ $students->total() }}
+                Total pour ce sexe : {{ $users->total() }}
                 @elseif($filtre === 'email')
-                Total pour cet email : {{ $students->total() }}
+                Total pour cet email : {{ $users->total() }}
                 @elseif($filtre === 'annee_naissance')
-                Total pour cette année : {{ $students->total() }}
+                Total pour cette année : {{ $users->total() }}
                 @else
                 Total étudiants : {{ $totalEtudiants }}
                 @endif
-            </div> 
-          {{-- <form method="GET" action="{{ route('students.index') }}" class="mb-4">
+            </div> --}}
+            {{-- <form method="GET" action="{{ route('users.index') }}" class="mb-4">
                 <select name="role" onchange="this.form.submit()" class="form-select">
                     <option value="">-- Filtrer par rôle --</option>
-                    <option value="student" {{ request('role')=='student' ? 'selected' : '' }}>Utilisateur</option>
+                    <option value="user" {{ request('role')=='user' ? 'selected' : '' }}>Utilisateur</option>
                     <option value="admin" {{ request('role')=='admin' ? 'selected' : '' }}>Administrateur</option>
                     <option value="superadmin" {{ request('role')=='superadmin' ? 'selected' : '' }}>Super Admin
                     </option>
@@ -44,35 +44,33 @@
             --}}
 
 
-            {{-- <form method="GET" action="{{ route('students.index') }}" class="flex items-center gap-3 mb-6">
+            <form method="GET" action="{{ route('users.index') }}" class="flex items-center gap-3 mb-6">
                 <label for="role" class="text-sm font-semibold">Filtrer par rôle :</label>
                 <select name="role" id="role" onchange="this.form.submit()"
                     class="px-3 py-2 rounded-lg border border-gray-300 text-sm">
                     <option value="">Tous</option>
-                    <option value="student" {{ request('role')=='student' ? 'selected' : '' }}>Utilisateur</option>
+                    <option value="user" {{ request('role')=='user' ? 'selected' : '' }}>Utilisateur</option>
                     <option value="admin" {{ request('role')=='admin' ? 'selected' : '' }}>Administrateur</option>
                     <option value="comptable" {{ request('role')=='comptable' ? 'selected' : '' }}>Comptable
                     </option>
                 </select>
-            </form> --}}
+            </form>
 
 
-            <div class="flex flex-wrap gap-4">
-                <a href="{{ route('students.create') }}"
+            {{-- <div class="flex flex-wrap gap-4">
+                <a href="{{ route('users.create') }}"
                     class="flex items-center gap-2 bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 transition shadow">
-                    <i class="fa fa-student-plus"></i> Ajouter un étudiant
+                    <i class="fa fa-user-plus"></i> Ajouter un étudiant
                 </a>
-
                 <a href="{{ route('frais.exportPdfUser') }}"
                     class="flex items-center gap-2 bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 transition shadow">
                     <i class="fa fa-file-pdf"></i> Exporter PDF
                 </a>
-
-            </div>
+            </div> --}}
         </div>
 
         {{-- FORMULAIRE DE RECHERCHE --}}
-        <form method="get" action="{{ route('students.index') }}"
+        {{-- <form method="get" action="{{ route('users.index') }}"
             class="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg shadow-sm mb-6 space-y-4">
             <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 <input type="text" name="name" placeholder="Rechercher par nom" value="{{ request('name') }}"
@@ -94,15 +92,15 @@
                     class="flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition">
                     <i class="fa fa-search"></i> Recherche
                 </button>
-                <a href="{{ route('students.index') }}"
+                <a href="{{ route('users.index') }}"
                     class="flex items-center gap-2 bg-gray-200 text-gray-700 px-4 py-2 rounded-md hover:bg-gray-300 transition">
                     <i class="fa fa-undo"></i> Réinitialiser
                 </a>
             </div>
-        </form>
+        </form> --}}
 
         {{-- IMPORT EXCEL --}}
-        <form action="{{ route('etudiants.import') }}" method="POST" enctype="multipart/form-data"
+        {{-- <form action="{{ route('etudiants.import') }}" method="POST" enctype="multipart/form-data"
             class="mb-6 bg-white dark:bg-gray-800 p-4 rounded-md shadow-sm flex flex-col sm:flex-row gap-4 items-center">
             @csrf
             <input type="file" name="file" required class="border px-3 py-2 rounded-md w-full max-w-sm" />
@@ -110,7 +108,7 @@
                 class="flex items-center gap-2 bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 transition">
                 <i class="fa fa-upload"></i> Importer
             </button>
-        </form>
+        </form> --}}
 
         @error('file')
         <div class="bg-red-100 text-red-800 p-4 rounded mb-4 shadow-sm">
@@ -136,7 +134,7 @@
                     <tr>
                         <th class="px-4 py-3">ID</th>
                         <th class="px-4 py-3">Nom</th>
-                        {{-- <th class="px-4 py-3">Roles</th> --}}
+                        <th class="px-4 py-3">Roles</th>
                         <th class="px-4 py-3">Prénom</th>
                         <th class="px-4 py-3">Email</th>
                         <th class="px-4 py-3">Filière</th>
@@ -152,37 +150,37 @@
                     </tr>
                 </thead>
                 <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
-                    @foreach($students as $student)
+                    @foreach($users as $user)
                     <tr class="hover:bg-blue-50 dark:hover:bg-gray-700 transition-colors duration-200">
-                        <td class="px-4 py-3">{{ $student->id }}</td>
-                        <td class="px-4 py-3">{{ $student->name }}</td>
-                        {{-- <td class="px-4 py-3">{{ $student->role }}</td> --}}
-                        <td class="px-4 py-3">{{ $student->prenom }}</td>
-                        <td class="px-4 py-3">{{ $student->email }}</td>
-                        <td class="px-4 py-3">{{ $student->filiere->name ?? 'N/A' }}</td>
-                        <td class="px-4 py-3">{{ $student->specialite->name ?? 'N/A' }}</td>
-                        <td class="px-4 py-3">{{ $student->niveau->name ?? 'N/A' }}</td>
-                        <td class="px-4 py-3">{{ $student->date_naissance }}</td>
-                        <td class="px-4 py-3">{{ $student->lieu_de_naissance }}</td>
+                        <td class="px-4 py-3">{{ $user->id }}</td>
+                        <td class="px-4 py-3">{{ $user->name }}</td>
+                        <td class="px-4 py-3">{{ $user->role }}</td>
+                        <td class="px-4 py-3">{{ $user->prenom }}</td>
+                        <td class="px-4 py-3">{{ $user->email }}</td>
+                        <td class="px-4 py-3">{{ $user->filiere->name ?? 'N/A' }}</td>
+                        <td class="px-4 py-3">{{ $user->specialite->name ?? 'N/A' }}</td>
+                        <td class="px-4 py-3">{{ $user->niveau->name ?? 'N/A' }}</td>
+                        <td class="px-4 py-3">{{ $user->date_naissance }}</td>
+                        <td class="px-4 py-3">{{ $user->lieu_de_naissance }}</td>
                         <td class="px-4 py-3">
-                            <img src="{{ $student->photo ? asset('images/students/' . $student->photo) : asset('images/default.jpg') }}"
-                                alt="Photo de {{ $student->name }}" class="w-10 h-10 rounded-full object-cover border">
+                            <img src="{{ $user->photo ? asset('images/users/' . $user->photo) : asset('images/default.jpg') }}"
+                                alt="Photo de {{ $user->name }}" class="w-10 h-10 rounded-full object-cover border">
                         </td>
-                        <td class="px-4 py-3">{{ $student->adresse }}</td>
+                        <td class="px-4 py-3">{{ $user->adresse }}</td>
                         <td class="px-4 py-3">
                             <span class="inline-block px-2 py-1 text-xs font-semibold rounded-full 
-                        {{ $student->sexe === 'Masculin' ? 'bg-blue-100 text-blue-800' : 'bg-pink-100 text-pink-800' }}">
-                                {{ $student->sexe }}
+                        {{ $user->sexe === 'Masculin' ? 'bg-blue-100 text-blue-800' : 'bg-pink-100 text-pink-800' }}">
+                                {{ $user->sexe }}
                             </span>
                         </td>
-                        <td class="px-4 py-3">{{ $student->telephone }}</td>
+                        <td class="px-4 py-3">{{ $user->telephone }}</td>
                         {{-- <td class="px-4 py-3 space-x-2">
-                            <a href="{{ route('students.edit', $student->id) }}" class="text-blue-600 hover:text-blue-800"
+                            <a href="{{ route('users.edit', $user->id) }}" class="text-blue-600 hover:text-blue-800"
                                 data-tippy-content="Éditer un apprenant" data-tippy-placement="top"
                                 data-tippy-theme="light-border">
                                 <i class="fa fa-edit"></i>
                             </a>
-                            <form method="POST" action="{{ route('students.delete', $student->id) }}" class="inline-block"
+                            <form method="POST" action="{{ route('users.delete', $user->id) }}" class="inline-block"
                                 onsubmit="return confirm('Confirmer la suppression de cet étudiant ?')">
                                 @csrf
                                 @method('DELETE')
@@ -197,7 +195,7 @@
                 </tbody>
             </table>
             <div class="px-4 py-3 border-t dark:border-gray-700">
-                {{ $students->links() }}
+                {{ $users->links() }}
             </div>
         </div>
     </div>

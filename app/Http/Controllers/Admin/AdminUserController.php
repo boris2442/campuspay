@@ -19,6 +19,6 @@ class AdminUserController extends Controller
             return $query->where('role', $role);
         })->paginate(10);
 
-        return view('pages.users.list-user', compact('users', 'role'));
+        return view('pages.users.users', compact('users', 'role'));
     }
 }
