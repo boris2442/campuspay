@@ -16,16 +16,7 @@ use Illuminate\Support\Facades\Auth;
 
 class PaiementController extends Controller
 {
-    //
-    // public function index()
-    // {
-
-    //     $paiements = Paiement::with('user')->orderBy('created_at', 'desc')->get();
-    //      $nombreEtudiantsPayeurs = Paiement::distinct('user_id')->count('user_id');
-    //     $totalMontant = $paiements->sum('montant_paye');
-    //     return view('pages.paiements.index-all', compact('paiements', 'totalMontant','nombreEtudiantsPayeurs'));
-    // }
-
+   
 
     public function index(Request $request)
     {
@@ -86,7 +77,7 @@ class PaiementController extends Controller
 
     public function create()
     {
-        // $students = User::all();
+        
         $students = User::where('role', 'user')->get();
 
         $frais = Frai::first(); // frais global unique
