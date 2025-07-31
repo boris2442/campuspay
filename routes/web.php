@@ -17,6 +17,8 @@ use App\Http\Controllers\Admin\SpecialiteImportController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\PresentationController;
 
+use App\Http\Controllers\Admin\AdminUserController;
+
 Route::get('/', function () {
     return view('welcome');
 })->name('home.welcome');
@@ -97,6 +99,7 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::put('/update-frais/{id}', [FraisController::class, 'update'])->name('update');
         Route::delete('/frais/delete/{id}', [FraisController::class, 'delete'])->name('delete');
     });
+    Route::get('/admin/users', [AdminUserController::class, 'index'])->name('users.index');
 });
 
 
