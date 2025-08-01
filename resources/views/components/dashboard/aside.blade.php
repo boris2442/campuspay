@@ -1,48 +1,8 @@
-{{-- <aside class="min-w-64 bg-white dark:bg-gray-800 shadow-lg min-h-screen fixed">
-    <div class="h-16 flex items-center justify-center bg-blue-600 text-white font-bold text-xl">
-        Mon Application
-    </div>
-    <nav class="mt-6 px-4 space-y-2">
-        <a href="{{ route('dashboard.project') }}"
-            class="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-600 hover:text-white text-gray-700 dark:text-gray-200">
-            <i class="fas fa-tachometer-alt mr-2"></i> Tableau de bord
-        </a>
-        <a href="{{ route('specialite.index') }}"
-            class="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-600 hover:text-white text-gray-700 dark:text-gray-200">
-            <i class="fas fa-certificate mr-2"></i> Spécialités
-        </a>
-        <a href="{{ route('filiere.index') }}"
-            class="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-600 hover:text-white text-gray-700 dark:text-gray-200">
-            <i class="fas fa-book mr-2"></i> Filières
-        </a>
-        <a href="{{ route('niveau.index') }}"
-            class="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-600 hover:text-white text-gray-700 dark:text-gray-200">
-            <i class="fas fa-layer-group mr-2"></i> Niveaux
-        </a>
-        <a href="{{ route('student.index') }}"
-            class="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-600 hover:text-white text-gray-700 dark:text-gray-200">
-            <i class="fas fa-user-graduate mr-2"></i> Étudiants
-        </a>
-        <a href="{{ route('student.index') }}"
-            class="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-600 hover:text-white text-gray-700 dark:text-gray-200">
-            <i class="fas fa-users mr-2"></i> Utilisateurs
-        </a>
-        <a href="{{ route('logout') }}"
-            class="block py-2.5 px-4 rounded transition duration-200 hover:bg-red-600 hover:text-white text-gray-700 dark:text-gray-200">
-            <i class="fas fa-sign-out-alt mr-2"></i> Déconnexion
-        </a>
-    </nav>
-</aside> --}}
-
-
-
-
-
 
 <aside id="sidebar"
     class="min-w-64 bg-white dark:bg-gray-800 shadow-lg min-h-screen fixed z-40 left-0 top-0 transform -translate-x-full md:translate-x-0 transition-transform duration-300 md:fixed md:block block md:min-w-64 "
     style="width: 16rem;">
-    {{ route('students.index') }}
+
     <div class="h-16 flex items-center justify-center uppercase bg-blue-600 text-white font-bold text-xl ">
         CampusPay
     </div>
