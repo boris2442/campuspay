@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?PowerDesigner AppLocale="UTF16" ID="{2EA43477-0E8B-4569-BB34-9DB3DC0DFF25}" Label="" LastModificationDate="1754054149" Name="mcd_projet_stage_dqp" Objects="56" Symbols="9" Type="{5F45F978-C4F3-4E35-A3FC-AF3318663A0F}" signature="LDM_DATA_MODEL_XML" version="15.1.0.2850"?>
+<?PowerDesigner AppLocale="UTF16" ID="{2EA43477-0E8B-4569-BB34-9DB3DC0DFF25}" Label="" LastModificationDate="1751547142" Name="mcd_projet_stage_dqp" Objects="56" Symbols="9" Type="{5F45F978-C4F3-4E35-A3FC-AF3318663A0F}" signature="LDM_DATA_MODEL_XML" version="15.1.0.2850"?>
 <!-- Veuillez ne pas modifier ce fichier -->
 
 <Model xmlns:a="attribute" xmlns:c="collection" xmlns:o="object">
@@ -887,9 +887,8 @@ NAMA 0 Arial,8,N</a:FontList>
 </c:Object>
 </o:RelationshipSymbol>
 <o:RelationshipSymbol Id="o9">
-<a:ModificationDate>1754054144</a:ModificationDate>
-<a:Rect>((-30,11588), (2370,32891))</a:Rect>
-<a:ListOfPoints>((1170,11588),(1170,32891))</a:ListOfPoints>
+<a:Rect>((-255,11588), (2145,37766))</a:Rect>
+<a:ListOfPoints>((945,11588),(945,37766))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>14080</a:ArrowStyle>
 <a:LineColor>16744576</a:LineColor>
@@ -907,9 +906,8 @@ NAMA 0 Arial,8,N</a:FontList>
 </c:Object>
 </o:RelationshipSymbol>
 <o:RelationshipSymbol Id="o12">
-<a:ModificationDate>1754054149</a:ModificationDate>
-<a:Rect>((-1921,-8287), (2279,11588))</a:Rect>
-<a:ListOfPoints>((179,11588),(179,-8287))</a:ListOfPoints>
+<a:Rect>((-1133,-14512), (3067,11588))</a:Rect>
+<a:ListOfPoints>((450,11588),(450,-2305),(1484,-2305),(1484,-14512))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>14080</a:ArrowStyle>
 <a:LineColor>16744576</a:LineColor>
@@ -990,9 +988,8 @@ Identifiers 0 Arial,8,N</a:FontList>
 </c:Object>
 </o:EntitySymbol>
 <o:EntitySymbol Id="o10">
-<a:ModificationDate>1754054144</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
-<a:Rect>((-7183,26835), (10965,38947))</a:Rect>
+<a:Rect>((-7633,31710), (10515,43822))</a:Rect>
 <a:AutoAdjustToText>0</a:AutoAdjustToText>
 <a:LineColor>4227200</a:LineColor>
 <a:FillColor>8637161</a:FillColor>
@@ -1035,9 +1032,8 @@ Identifiers 0 Arial,8,N</a:FontList>
 </c:Object>
 </o:EntitySymbol>
 <o:EntitySymbol Id="o13">
-<a:ModificationDate>1754054149</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
-<a:Rect>((-8357,-14774), (8175,-1800))</a:Rect>
+<a:Rect>((-6782,-20999), (9750,-8025))</a:Rect>
 <a:AutoAdjustToText>0</a:AutoAdjustToText>
 <a:LineColor>4227200</a:LineColor>
 <a:FillColor>8637161</a:FillColor>
