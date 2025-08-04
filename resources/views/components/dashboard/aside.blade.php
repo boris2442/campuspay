@@ -4,6 +4,7 @@
     style="width: 16rem;">
 
     <div class="h-16 flex items-center justify-center uppercase bg-blue-600 text-white font-bold text-xl ">
+       <img src="{{ asset('logos/campuspaylogo.jpg') }}" alt="Logo" class="h-10 w-10 mr-2 rounded-full">
         CampusPay
     </div>
     <nav class="mt-6 px-4 space-y-2">

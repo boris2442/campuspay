@@ -45,11 +45,25 @@
             width: 80px;
             text-align: center;
         }
+        header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            width: 100%;
+            padding: 10px;
+        }
+        header img{
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+        }
     </style>
 </head>
 
 <body>
     <header>
+        <img src="{{ public_path('logos/campuspaylogo.jpg') }}" alt="Logo" class="">
         <img src="{{ public_path('logos/logo.jpg') }}" alt="Logo">
     </header>
     <h2>Liste des etudiants</h2>
