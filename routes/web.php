@@ -85,8 +85,8 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     //Route destinee aux students
     Route::prefix('/admin/students')->name('students.')->group(function () {
         Route::get('/', [UserController::class, 'index'])->name('index');
-        Route::get('/create', [UserController::class, 'create'])->name('create');
-        Route::post('/create', [UserController::class, 'store'])->name('store');
+        // Route::get('/create', [UserController::class, 'create'])->name('create');
+        // Route::post('/store', [UserController::class, 'store'])->name('store');
         Route::get('/edit/{id}', [UserController::class, 'edit'])->name('edit');
         Route::put('/update/{id}', [UserController::class, 'update'])->name('update');
         Route::delete('/delete/{id}', [UserController::class, 'delete'])->name('delete');
@@ -138,7 +138,7 @@ Route::prefix('/admin')->group(function () {
     Route::get('/export-user-pdf', [UserController::class, 'exportPdfUser'])->name('frais.exportPdfUser');
     Route::get('/import-filieres', [ImportFiliereController::class, 'importForm'])->name('filieres.importForm');
     Route::post('/import-filieres', [ImportFiliereController::class, 'import'])->name('filieres.import');
-    Route::get('/apecialites/import', [SpecialiteController::class, 'form'])->name('specialites.import.form');
+    Route::get('/specialites/import', [SpecialiteController::class, 'form'])->name('specialites.import.form');
     Route::post('specialites/import', [SpecialiteImportController::class, 'import'])->name('specialites.import');
     Route::get('/etudiants/import', [ImportEtudiantController::class, 'importForm'])->name('etudiants.import.form');
     Route::post('/etudiants/import', [ImportEtudiantController::class, 'import'])->name('etudiants.import');

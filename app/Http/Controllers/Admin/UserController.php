@@ -6,6 +6,10 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\UserRequest;
 use App\Models\User;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
 use PDF;
 use Illuminate\Support\Facades\Hash;
 
@@ -16,6 +20,7 @@ use App\Models\Specialite;
 use App\Mail\StudentCredentialsMail;
 use Illuminate\Support\Facades\Mail;
 use Carbon\Carbon;
+
 class UserController extends Controller
 {
 
@@ -74,9 +79,6 @@ class UserController extends Controller
      */
     public function store(UserRequest $request)
     {
-        // Validate and store the student data
-
-
         $data = $request->validated();
         $password = $this->generatePassword(8);
         $data['password'] = Hash::make($password);
@@ -95,6 +97,52 @@ class UserController extends Controller
         Mail::to($user->email)->send(new StudentCredentialsMail($user, $password));
         return redirect()->route('students.index')->with('success', 'Student added successfully!');
     }
+ 
+
+    // public function store(UserRequest $request)
+
+    // {
+    //     DB::beginTransaction();
+    //     try {
+    //         $data = $request->validated();
+    //         $password = Str::random(8);
+    //         $data['password'] = Hash::make($password);
+
+    //         $photoPath = null;
+    //         if ($request->hasFile('photo')) {
+    //             $file = $request->file('photo');
+    //             if ($file->isValid()) {
+    //                 $filename = time() . '_' . Str::random(6) . '.' . $file->getClientOriginalExtension();
+    //                 $photoPath = $file->storeAs('students', $filename, 'public');
+    //                 $data['photo'] = $photoPath;
+    //             } else {
+    //                 Log::error('Fichier photo invalide : ', ['error' => $file->getErrorMessage()]);
+    //                 return back()->withErrors(['photo' => 'Le fichier téléchargé est invalide'])->withInput();
+    //             }
+    //         }
+
+    //         $user = User::create($data);
+    //         Mail::to($user->email)->queue(new StudentCredentialsMail($user, $password));
+
+    //         DB::commit();
+
+    //         return redirect()->route('students.index')->with('success', 'Étudiant ajouté avec succès !');
+    //     } catch (\Exception $e) {
+    //         DB::rollBack();
+
+    //         if ($photoPath) {
+    //             Storage::disk('public')->delete($photoPath);
+    //         }
+
+    //         Log::error('Erreur lors de la création de l\'étudiant : ', [
+    //             'message' => $e->getMessage(),
+    //             'file' => $e->getFile(),
+    //             'line' => $e->getLine(),
+    //         ]);
+
+    //         return back()->withErrors(['error' => 'Une erreur est survenue lors de l\'enregistrement.'])->withInput();
+    //     }
+    // }
     public function edit($id)
     {
         $student = User::findOrFail($id);
@@ -138,6 +186,6 @@ class UserController extends Controller
         // $students = User::all();
         $students = User::where('role', 'user')->get();
         $pdf = PDF::loadView('pages.users.pdf', compact('students'))->setPaper('a3', 'landscape');;
-        return $pdf->download('liste_des_etudiants_au_'.$date.'.pdf');
+        return $pdf->download('liste_des_etudiants_au_' . $date . '.pdf');
     }
 }

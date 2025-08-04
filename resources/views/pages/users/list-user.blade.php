@@ -32,43 +32,21 @@
                 Total étudiants : {{ $totalEtudiants }}
                 @endif
             </div>
-            {{-- <form method="GET" action="{{ route('students.index') }}" class="mb-4">
-                <select name="role" onchange="this.form.submit()" class="form-select">
-                    <option value="">-- Filtrer par rôle --</option>
-                    <option value="student" {{ request('role')=='student' ? 'selected' : '' }}>Utilisateur</option>
-                    <option value="admin" {{ request('role')=='admin' ? 'selected' : '' }}>Administrateur</option>
-                    <option value="superadmin" {{ request('role')=='superadmin' ? 'selected' : '' }}>Super Admin
-                    </option>
-                </select>
-            </form>
-            --}}
 
 
-            {{-- <form method="GET" action="{{ route('students.index') }}" class="flex items-center gap-3 mb-6">
-                <label for="role" class="text-sm font-semibold">Filtrer par rôle :</label>
-                <select name="role" id="role" onchange="this.form.submit()"
-                    class="px-3 py-2 rounded-lg border border-gray-300 text-sm">
-                    <option value="">Tous</option>
-                    <option value="student" {{ request('role')=='student' ? 'selected' : '' }}>Utilisateur</option>
-                    <option value="admin" {{ request('role')=='admin' ? 'selected' : '' }}>Administrateur</option>
-                    <option value="comptable" {{ request('role')=='comptable' ? 'selected' : '' }}>Comptable
-                    </option>
-                </select>
-            </form> --}}
-
-
-            <div class="flex flex-wrap gap-4">
-                <a href="{{ route('students.create') }}"
+            {{-- <div class="flex flex-wrap gap-4"> --}}
+                {{-- <a href="{{ route('students.create') }}"
                     class="flex items-center gap-2 bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 transition shadow">
                     <i class="fa fa-student-plus"></i> Ajouter un étudiant
-                </a>
+                </a> --}}
 
                 <a href="{{ route('frais.exportPdfUser') }}"
                     class="flex items-center gap-2 bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 transition shadow">
                     <i class="fa fa-file-pdf"></i> Exporter PDF
                 </a>
 
-            </div>
+                {{--
+            </div> --}}
         </div>
 
         {{-- FORMULAIRE DE RECHERCHE --}}
@@ -166,7 +144,10 @@
                         <td class="px-4 py-3">{{ $student->lieu_de_naissance }}</td>
                         <td class="px-4 py-3">
                             <img src="{{ $student->photo ? asset('images/students/' . $student->photo) : asset('images/default.jpg') }}"
-                                alt="Photo de {{ $student->name }}" class="w-10 h-10 rounded-full object-cover border">
+                                {{--
+                                src="{{ $student->photo ? asset('storage/' . $student->photo) : asset('images/default.jpg') }}"
+                                --}} alt="Photo de {{ $student->name }}"
+                                class="w-10 h-10 rounded-full object-cover border">
                         </td>
                         <td class="px-4 py-3">{{ $student->adresse }}</td>
                         <td class="px-4 py-3">
