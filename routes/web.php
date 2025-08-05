@@ -103,6 +103,14 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::delete('/frais/delete/{id}', [FraisController::class, 'delete'])->name('delete');
     });
     Route::get('/admin/users', [AdminUserController::class, 'index'])->name('users.index');
+    Route::get('/admin/users/create', [AdminUserController::class, 'create'])->name('users.create');
+    Route::post('/admin/users', [AdminUserController::class, 'store'])->name('users.store');
+    Route::get('/admin/users/{user}/edit', [AdminUserController::class, 'edit'])->name('users.edit');
+    Route::put('/admin/users/{user}', [AdminUserController::class, 'update'])->name('users.update');
+    Route::delete('/admin/users/{user}', [AdminUserController::class, 'destroy'])->name('users.destroy');
+
+    // Route::get('/admin/users/pdf', [AdminUserController::class, 'exportPdf'])->name('users.exportPdf');
+    //Route::get('/admin/users/pdf', [UserController::class, 'exportPdfUser'])->name('users.exportPdf');
 });
 
 
