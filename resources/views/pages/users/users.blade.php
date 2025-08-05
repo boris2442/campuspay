@@ -134,17 +134,12 @@
                     <tr>
                         <th class="px-4 py-3">ID</th>
                         <th class="px-4 py-3">Nom</th>
-                        <th class="px-4 py-3">Roles</th>
                         <th class="px-4 py-3">Prénom</th>
                         <th class="px-4 py-3">Email</th>
-                        <th class="px-4 py-3">Filière</th>
-                        <th class="px-4 py-3">Spécialité</th>
-                        <th class="px-4 py-3">Niveau</th>
-                        <th class="px-4 py-3">Naissance</th>
-                        <th class="px-4 py-3">Lieu</th>
-                        <th class="px-4 py-3">Photo</th>
-                        <th class="px-4 py-3">Adresse</th>
-                        <th class="px-4 py-3">Sexe</th>
+                        <th class="px-4 py-3">Roles</th>
+
+
+
                         <th class="px-4 py-3">Téléphone</th>
                         <th class="px-4 py-3">Actions</th>
                     </tr>
@@ -154,25 +149,9 @@
                     <tr class="hover:bg-blue-50 dark:hover:bg-gray-700 transition-colors duration-200">
                         <td class="px-4 py-3">{{ $user->id }}</td>
                         <td class="px-4 py-3">{{ $user->name }}</td>
-                        <td class="px-4 py-3">{{ $user->role }}</td>
                         <td class="px-4 py-3">{{ $user->prenom }}</td>
                         <td class="px-4 py-3">{{ $user->email }}</td>
-                        <td class="px-4 py-3">{{ $user->filiere->name ?? 'N/A' }}</td>
-                        <td class="px-4 py-3">{{ $user->specialite->name ?? 'N/A' }}</td>
-                        <td class="px-4 py-3">{{ $user->niveau->name ?? 'N/A' }}</td>
-                        <td class="px-4 py-3">{{ $user->date_naissance }}</td>
-                        <td class="px-4 py-3">{{ $user->lieu_de_naissance }}</td>
-                        <td class="px-4 py-3">
-                            <img src="{{ $user->photo ? asset('images/users/' . $user->photo) : asset('images/default.jpg') }}"
-                                alt="Photo de {{ $user->name }}" class="w-10 h-10 rounded-full object-cover border">
-                        </td>
-                        <td class="px-4 py-3">{{ $user->adresse }}</td>
-                        <td class="px-4 py-3">
-                            <span class="inline-block px-2 py-1 text-xs font-semibold rounded-full 
-                        {{ $user->sexe === 'Masculin' ? 'bg-blue-100 text-blue-800' : 'bg-pink-100 text-pink-800' }}">
-                                {{ $user->sexe }}
-                            </span>
-                        </td>
+                        <td class="px-4 py-3">{{ $user->role }}</td>
                         <td class="px-4 py-3">{{ $user->telephone }}</td>
                         <td class="px-4 py-3 space-x-2">
                             <a href="{{ route('users.edit', $user->id) }}" class="text-blue-600 hover:text-blue-800"
