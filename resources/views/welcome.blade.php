@@ -23,31 +23,35 @@
 
 <body
     class="bg-[#FDFDFC] dark:bg-[#0a0a0a] text-[#1b1b18] flex p-6 lg:p-8 items-center lg:justify-center min-h-screen flex-col particles-js">
-    <header class="w-full lg:max-w-4xl max-w-[335px] text-sm mb-6 not-has-[nav]:hidden">
+    <header class="w-full max-w-sm sm:max-w-md md:max-w-xl lg:max-w-4xl mx-auto px-4 mb-6 text-sm not-has-[nav]:hidden flex items-center justify-between">
+        <div>
+            <img src="{{ asset('logos/campuspaylogo.jpg') }}" class="h-14 w-14 rounded-full" alt="Logo CampusPay" />
+        </div>
+
         @if (Route::has('login'))
-        <nav class="flex items-center justify-end gap-4">
+        <nav class="flex items-center justify-end gap-3 mt-4">
             @auth
             <a href="{{ url('/dashboard') }}"
-                class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] border-[#19140035] hover:border-[#1915014a] border text-white dark:border-[#3E3E3A] dark:hover:border-[#62605b] rounded-sm text-sm leading-normal">
+                class="px-5 py-1.5 rounded-sm text-sm text-white border border-blue-700 hover:bg-blue-700 bg-transparent transition">
                 Dashboard
             </a>
 
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
                 <button type="submit"
-                    class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] border-[#19140035] hover:border-[#1915014a] border  dark:border-[#3E3E3A] dark:hover:border-[#62605b] rounded-sm text-sm leading-normal bg-white text-red-500">
+                    class="px-5 py-1.5 rounded-sm text-sm text-red-600 border border-red-500 hover:bg-red-100 bg-white transition">
                     Déconnexion
                 </button>
             </form>
             @else
             <a href="{{ route('login') }}"
-                class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] text-white border border-transparent hover:border-[#19140035] dark:hover:border-[#3E3E3A] rounded-sm text-sm leading-normal">
+                class="px-5 py-1.5 rounded-sm text-sm text-white border border-gray-300 hover:bg-gray-200 hover:text-black transition">
                 Log in
             </a>
 
             @if (Route::has('register'))
             <a href="{{ route('register') }}"
-                class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] border-[#19140035] hover:border-[#1915014a] border text-[#1b1b18] dark:border-[#3E3E3A] dark:hover:border-[#62605b] rounded-sm text-sm leading-normal bg-white">
+                class="px-5 py-1.5 rounded-sm text-sm text-black bg-yellow-400 hover:bg-yellow-300 transition">
                 Register
             </a>
             @endif
@@ -55,6 +59,7 @@
         </nav>
         @endif
     </header>
+
 
 
     <!-- Particles Background -->
@@ -71,9 +76,7 @@
                 Conçue pour les établissements d’enseignement, cette plateforme vous aide à centraliser la gestion des
                 étudiants, suivre les paiements, et éditer des rapports rapidement.
             </p>
-            <div
-             {{-- class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center" --}}
-             >
+            <div {{-- class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center" --}}>
                 {{-- <a href="/register"
                     class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
                     Créer un compte
@@ -95,7 +98,8 @@
 
     <footer class="text-white  py-6">
         <div class="max-w-5xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
-            <p id="copyright" class="text-sm mb-4 md:mb-0 font-cursive">&copy; <span id="year">{{date('Y')}}</span> with ❤️ by
+            <p id="copyright" class="text-sm mb-4 md:mb-0 font-cursive">&copy; <span id="year">{{date('Y')}}</span> with
+                ❤️ by
                 Boris Aubin SIMO. Tous droits
                 réservés.</p>
 

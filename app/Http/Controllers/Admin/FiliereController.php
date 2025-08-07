@@ -14,7 +14,7 @@ class FiliereController extends Controller
     //
     public function index()
     {
-        $filieres = Filiere::paginate(5);
+        $filieres = Filiere::paginate(6);
         return view('pages.filieres.list-filiere', compact('filieres'));
     }
     public function create()

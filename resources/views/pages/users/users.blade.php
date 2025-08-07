@@ -17,32 +17,11 @@
 
         {{-- BLOC TOTAL + ACTIONS --}}
         <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-6 gap-4">
-
-            {{-- <div class="bg-green-500 text-white px-5 py-2 rounded-md flex items-center gap-2">
-                <i class="fa fa-list"></i>
-                @if($filtre === 'nom')
-                Total pour ce nom : {{ $users->total() }}
-                @elseif($filtre === 'sexe')
-                Total pour ce sexe : {{ $users->total() }}
-                @elseif($filtre === 'email')
-                Total pour cet email : {{ $users->total() }}
-                @elseif($filtre === 'annee_naissance')
-                Total pour cette année : {{ $users->total() }}
-                @else
-                Total étudiants : {{ $totalEtudiants }}
-                @endif
-            </div> --}}
-            {{-- <form method="GET" action="{{ route('users.index') }}" class="mb-4">
-                <select name="role" onchange="this.form.submit()" class="form-select">
-                    <option value="">-- Filtrer par rôle --</option>
-                    <option value="user" {{ request('role')=='user' ? 'selected' : '' }}>Utilisateur</option>
-                    <option value="admin" {{ request('role')=='admin' ? 'selected' : '' }}>Administrateur</option>
-                    <option value="superadmin" {{ request('role')=='superadmin' ? 'selected' : '' }}>Super Admin
-                    </option>
-                </select>
-            </form>
-            --}}
-
+            <div class="flex items-center gap-4">
+                <span class="text-lg font-semibold text-gray-800 dark:text-gray-200">Total Utilisateurs :
+                    <span class="text-blue-600">{{ $users->total() }}</span>
+                </span>
+            </div>
 
             <form method="GET" action="{{ route('users.index') }}" class="flex items-center gap-3 mb-6">
                 <label for="role" class="text-sm font-semibold">Filtrer par rôle :</label>
@@ -55,61 +34,7 @@
                     </option>
                 </select>
             </form>
-
-
-            {{-- <div class="flex flex-wrap gap-4">
-                <a href="{{ route('users.create') }}"
-                    class="flex items-center gap-2 bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 transition shadow">
-                    <i class="fa fa-user-plus"></i> Ajouter un étudiant
-                </a>
-                <a href="{{ route('frais.exportPdfUser') }}"
-                    class="flex items-center gap-2 bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 transition shadow">
-                    <i class="fa fa-file-pdf"></i> Exporter PDF
-                </a>
-            </div> --}}
         </div>
-
-        {{-- FORMULAIRE DE RECHERCHE --}}
-        {{-- <form method="get" action="{{ route('users.index') }}"
-            class="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg shadow-sm mb-6 space-y-4">
-            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                <input type="text" name="name" placeholder="Rechercher par nom" value="{{ request('name') }}"
-                    class="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 w-full" />
-                <input type="text" name="email" placeholder="Rechercher par Email" value="{{ request('email') }}"
-                    class="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 w-full" />
-                <select name="sexe"
-                    class="border border-gray-300 rounded-md px-3 py-2 bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-400 w-full">
-                    <option value="">Filtrer les étudiants par sexe</option>
-                    <option value="Masculin" {{ request('sexe')=='Masculin' ? 'selected' : '' }}>Masculin</option>
-                    <option value="Feminin" {{ request('sexe')=='Feminin' ? 'selected' : '' }}>Feminin</option>
-                </select>
-                <input type="text" name="annee_naissance" placeholder="Année de naissance (ex: 2002)"
-                    value="{{ request('annee_naissance') }}"
-                    class="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 w-full" />
-            </div>
-            <div class="flex flex-wrap items-center gap-4 mt-4">
-                <button type="submit"
-                    class="flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition">
-                    <i class="fa fa-search"></i> Recherche
-                </button>
-                <a href="{{ route('users.index') }}"
-                    class="flex items-center gap-2 bg-gray-200 text-gray-700 px-4 py-2 rounded-md hover:bg-gray-300 transition">
-                    <i class="fa fa-undo"></i> Réinitialiser
-                </a>
-            </div>
-        </form> --}}
-
-        {{-- IMPORT EXCEL --}}
-        {{-- <form action="{{ route('etudiants.import') }}" method="POST" enctype="multipart/form-data"
-            class="mb-6 bg-white dark:bg-gray-800 p-4 rounded-md shadow-sm flex flex-col sm:flex-row gap-4 items-center">
-            @csrf
-            <input type="file" name="file" required class="border px-3 py-2 rounded-md w-full max-w-sm" />
-            <button type="submit"
-                class="flex items-center gap-2 bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 transition">
-                <i class="fa fa-upload"></i> Importer
-            </button>
-        </form> --}}
-
         @error('file')
         <div class="bg-red-100 text-red-800 p-4 rounded mb-4 shadow-sm">
             {{ $message }}
