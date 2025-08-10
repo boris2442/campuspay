@@ -97,52 +97,7 @@ class UserController extends Controller
         Mail::to($user->email)->send(new StudentCredentialsMail($user, $password));
         return redirect()->route('students.index')->with('success', 'Student added successfully!');
     }
- 
 
-    // public function store(UserRequest $request)
-
-    // {
-    //     DB::beginTransaction();
-    //     try {
-    //         $data = $request->validated();
-    //         $password = Str::random(8);
-    //         $data['password'] = Hash::make($password);
-
-    //         $photoPath = null;
-    //         if ($request->hasFile('photo')) {
-    //             $file = $request->file('photo');
-    //             if ($file->isValid()) {
-    //                 $filename = time() . '_' . Str::random(6) . '.' . $file->getClientOriginalExtension();
-    //                 $photoPath = $file->storeAs('students', $filename, 'public');
-    //                 $data['photo'] = $photoPath;
-    //             } else {
-    //                 Log::error('Fichier photo invalide : ', ['error' => $file->getErrorMessage()]);
-    //                 return back()->withErrors(['photo' => 'Le fichier téléchargé est invalide'])->withInput();
-    //             }
-    //         }
-
-    //         $user = User::create($data);
-    //         Mail::to($user->email)->queue(new StudentCredentialsMail($user, $password));
-
-    //         DB::commit();
-
-    //         return redirect()->route('students.index')->with('success', 'Étudiant ajouté avec succès !');
-    //     } catch (\Exception $e) {
-    //         DB::rollBack();
-
-    //         if ($photoPath) {
-    //             Storage::disk('public')->delete($photoPath);
-    //         }
-
-    //         Log::error('Erreur lors de la création de l\'étudiant : ', [
-    //             'message' => $e->getMessage(),
-    //             'file' => $e->getFile(),
-    //             'line' => $e->getLine(),
-    //         ]);
-
-    //         return back()->withErrors(['error' => 'Une erreur est survenue lors de l\'enregistrement.'])->withInput();
-    //     }
-    // }
     public function edit($id)
     {
         $student = User::findOrFail($id);

@@ -80,7 +80,7 @@
                         <td class="px-4 py-3">{{ $user->telephone }}</td>
                         <td class="px-4 py-3 space-x-2">
                             <a href="{{ route('users.edit', $user->id) }}" class="text-blue-600 hover:text-blue-800"
-                                data-tippy-content="Éditer un apprenant" data-tippy-placement="top"
+                                data-tippy-content="Éditer un utilisateur" data-tippy-placement="top"
                                 data-tippy-theme="light-border">
                                 <i class="fa fa-edit"></i>
                             </a>
@@ -88,7 +88,7 @@
                                 onsubmit="return confirm('Confirmer la suppression de cet étudiant ?')">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" data-tippy-content="Supprimer l'étudiant"
+                                <button type="submit" data-tippy-content="Supprimer utilisateur"
                                     data-tippy-placement="top" data-tippy-theme="light-border">
                                     <i class="fa fa-trash text-red-600 hover:text-red-800"></i>
                                 </button>
