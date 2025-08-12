@@ -116,6 +116,8 @@
                         <th class="px-4 py-3">Nom</th>
                         {{-- <th class="px-4 py-3">Roles</th> --}}
                         <th class="px-4 py-3">Prénom</th>
+                        <th class="px-4 py-3">Statut</th>
+                        <th class="px-4 py-3">Historiques</th>
                         <th class="px-4 py-3">Email</th>
                         <th class="px-4 py-3">Filière</th>
                         <th class="px-4 py-3">Spécialité</th>
@@ -136,6 +138,11 @@
                         <td class="px-4 py-3">{{ $student->name }}</td>
                         {{-- <td class="px-4 py-3">{{ $student->role }}</td> --}}
                         <td class="px-4 py-3">{{ $student->prenom }}</td>
+                        <td class="px-4 py-3">{{ $student->statut_paiement }}</td>
+                        <td class="px-4 py-3"><a href="{{ route('students.paiements', $student->id) }}" 
+                       class="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600">
+                        Voir
+                    </a></td>
                         <td class="px-4 py-3">{{ $student->email }}</td>
                         <td class="px-4 py-3">{{ $student->filiere->name ?? 'N/A' }}</td>
                         <td class="px-4 py-3">{{ $student->specialite->name ?? 'N/A' }}</td>

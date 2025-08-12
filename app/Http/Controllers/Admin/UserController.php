@@ -27,7 +27,7 @@ class UserController extends Controller
     public function index(Request $request)
     {
         // $query = User::query();
-        $query = User::with(['filiere', 'specialite', 'niveau'])
+        $query = User::with(['filiere', 'specialite', 'niveau', 'paiements'])
             ->where('role', 'user');  // Filtre rôle 'user';
         $filtre = null; // Variable pour stocker le filtre appliqué
         if ($request->filled('name')) {
