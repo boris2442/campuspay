@@ -153,8 +153,7 @@ Route::prefix('/admin')->group(function () {
     Route::get('/niveaux/export/pdf', [NiveauExportController::class, 'exportPdf'])->name('niveaux.exportPdf');
     Route::post('/niveaux/import', [ImportNiveauController::class, 'import'])->name('niveaux.import');
     Route::get('/students/{id}/paiements', [PaiementController::class, 'indexPaymentsForUser'])
-    ->name('students.paiements');
-
+        ->name('students.paiements');
 })->middleware(['auth', 'admin', 'comptable']);
 // });
 Route::get('/presentation', [PresentationController::class, 'index'])->name('presentation');

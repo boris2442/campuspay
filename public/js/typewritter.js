@@ -4,7 +4,7 @@
         loop: true,
         pauseFor: 2500,
         autoStart: true,
-        cursor: '▌',
+        cursor: '|',
         deleteSpeed: 100,
         typingSpeed: 75,
         cursorClassName: 'typewriter-cursor',

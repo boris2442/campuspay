@@ -1,0 +1,17 @@
+//HOSTINGER
+DB_DATABASE=u732044820_campuspay
+DB_USERNAME=u732044820_info
+DB_PASSWORD:Bafoussam9boris2006
+
+
+
+
+
+
+
+
+
+test////////////////////
+password:b>[9Q3?n
+database:u732044820_projet_laravel
+username:u732044820_projet_laravel
