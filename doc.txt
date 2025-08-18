@@ -4,7 +4,7 @@ DB_USERNAME=u732044820_info
 DB_PASSWORD:Bafoussam9boris2006
 
 
-
+ssh -p 65002 u732044820@82.25.125.17
 
 
 
