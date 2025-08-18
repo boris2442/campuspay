@@ -117,6 +117,23 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
+            @auth
+            @if(auth()->user()->role === 'user')
+            <x-nav-link :href="route('paiements.user')" :active="request()->routeIs('paiements.user')">
+                {{ __('Mes paiements') }}
+            </x-nav-link>
+            @endif
+            @endauth
+
+            {{-- <h2 class="flex items-center">name</h2> --}}
+            {{-- @if($condition)
+
+            @endif --}}
+            @auth
+            @if(in_array(auth()->user()->role,['admin', 'comptable']))
+            <div class="flex items-center"><a href="{{ route('dashboard.project') }}">Tableau de bord</a></div>
+            @endif
+            @endauth
         </div>
 
         <!-- Responsive Settings Options -->
