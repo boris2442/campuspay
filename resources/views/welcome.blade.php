@@ -6,6 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>CAMPUSPAY</title>
+    <meta name="description"
+        content="CampusPay est une application de gestion des paiements universitaires, facilitant les transactions sécurisées pour étudiants et institutions.">
+    <meta name="keywords" content="CampusPay, gestion des paiements, étudiants, université, transactions sécurisées">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="SIMO TSEBO Boris Aubin">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="CampusPay – Gestion des paiements universitaires">
+    <meta property="og:description"
+        content="Simplifiez les paiements universitaires avec CampusPay, une plateforme sécurisée pour étudiants et institutions.">
+    <meta property="og:image" content="{{ asset('logos/campuspaylogo.jpg') }}">
+    <meta property="og:url" content="{{ env('APP_URL') }}">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="CampusPay">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="{{ asset('logos/campuspaylogo.jpg') }}" type="image/jpeg" sizes="16x16">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -23,7 +39,8 @@
 
 <body
     class="bg-[#FDFDFC] dark:bg-[#0a0a0a] text-[#1b1b18] flex p-6 lg:p-8 items-center lg:justify-center min-h-screen flex-col particles-js">
-    <header class="w-full max-w-sm sm:max-w-md md:max-w-xl lg:max-w-4xl mx-auto px-4 mb-6 text-sm not-has-[nav]:hidden flex items-center justify-between">
+    <header
+        class="w-full max-w-sm sm:max-w-md md:max-w-xl lg:max-w-4xl mx-auto px-4 mb-6 text-sm not-has-[nav]:hidden flex items-center justify-between">
         <div>
             <img src="{{ asset('logos/campuspaylogo.jpg') }}" class="h-14 w-14 rounded-full" alt="Logo CampusPay" />
         </div>

@@ -6,8 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>@yield('title')</title>
+    <!-- SEO de base -->
+    <meta name="description"
+        content="CampusPay est une application de gestion des paiements universitaires, facilitant les transactions sécurisées pour étudiants et institutions.">
+    <meta name="keywords" content="CampusPay, gestion des paiements, étudiants, université, transactions sécurisées">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="SIMO TSEBO Boris Aubin">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="CampusPay – Gestion des paiements universitaires">
+    <meta property="og:description"
+        content="Simplifiez les paiements universitaires avec CampusPay, une plateforme sécurisée pour étudiants et institutions.">
+    <meta property="og:image" content="{{ asset('logos/campuspaylogo.jpg') }}">
+    <meta property="og:url" content="{{ env('APP_URL') }}">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="CampusPay">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="icon" href="{{ asset('logos/campuspaylogo.jpg') }}" type="image/jpg" sizes="16x16" />
+    <link rel="icon" href="{{ asset('logos/campuspaylogo.jpg') }}" type="image/jpeg" sizes="16x16">
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
