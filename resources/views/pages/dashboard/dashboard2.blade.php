@@ -17,18 +17,12 @@
             <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8 ">
                 <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 text-center">
                     <h3 class="font-medium text-gray-600 dark:text-gray-300"> <i
-                            class="fas fa-user-graduate text-blue-500 mr-2"></i>
-                        Étudiants</h3>
-                    <p class="mt-2 text-2xl font-bold text-blue-600">
-                        {{ $students->count() }}
-                    </p>
+                            class="fas fa-user-graduate text-blue-500 mr-2"></i> Étudiants</h3>
+                    <p class="mt-2 text-2xl font-bold text-blue-600"> {{ $students->count() }} </p>
                 </div>
-
                 <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 text-center">
                     <h3 class="font-medium text-gray-600 dark:text-gray-300"> <i
-                            class="fas fa-book text-indigo-500 mr-2"></i>
-                        Filières
-                    </h3>
+                            class="fas fa-book text-indigo-500 mr-2"></i> Filières </h3>
                     <p class="mt-2 text-2xl font-bold text-blue-600">{{$filieres->count()}}</p>
                 </div>
                 <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 text-center">
@@ -38,46 +32,30 @@
                 </div>
                 <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 text-center">
                     <h3 class="font-medium text-gray-600 dark:text-gray-300"> <i
-                            class="fas fa-layer-group text-pink-500 mr-2"></i>
-                        Niveaux</h3>
+                            class="fas fa-layer-group text-pink-500 mr-2"></i> Niveaux</h3>
                     <p class="mt-2 text-2xl font-bold text-blue-600">{{$niveaux->count()}} </p>
                 </div>
                 <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 text-center max-w-[400px]">
                     <h3 class="font-medium text-gray-600 dark:text-gray-300">💰 Budget annuel attendu</h3>
-                    <p class="mt-2 text-2xl font-bold text-yellow-600">
-                        {{ number_format($statsFinancieres['totalAttendu'], 0, ',', ' ') }} FCFA
-                    </p>
+                    <p class="mt-2 text-2xl font-bold text-yellow-600"> {{
+                        number_format($statsFinancieres['totalAttendu'], 0, ',', ' ') }} FCFA </p>
                 </div>
-
                 <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 text-center max-w-[400px]">
                     <h3 class="font-medium text-gray-600 dark:text-gray-300">✔️ Déjà versé (validé)</h3>
-                    <p class="mt-2 text-2xl font-bold text-green-600">
-                        {{ number_format($statsFinancieres['totalVerse'], 0, ',', ' ') }} FCFA
-                    </p>
+                    <p class="mt-2 text-2xl font-bold text-green-600"> {{ number_format($statsFinancieres['totalVerse'],
+                        0, ',', ' ') }} FCFA </p>
                 </div>
-
                 <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 text-center max-w-[400px]">
                     <h3 class="font-medium text-gray-600 dark:text-gray-300">⏳ Reste à verser</h3>
-                    <p class="mt-2 text-2xl font-bold text-red-600">
-                        {{ number_format($statsFinancieres['resteAVerser'], 0, ',', ' ') }} FCFA
-                    </p>
+                    <p class="mt-2 text-2xl font-bold text-red-600"> {{ number_format($statsFinancieres['resteAVerser'],
+                        0, ',', ' ') }} FCFA </p>
                 </div>
-
-
                 <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 text-center">
-                    <h3 class="font-medium text-gray-600 dark:text-gray-300">
-                        <i class="fas fa-chart-line text-blue-500 mr-2"></i> Progression globale des paiements
-                    </h3>
-                    <p class="mt-2 text-3xl font-bold text-blue-600">
-                        {{ $pourcentageTotal }}%
-                    </p>
+                    <h3 class="font-medium text-gray-600 dark:text-gray-300"> <i
+                            class="fas fa-chart-line text-blue-500 mr-2"></i> Progression globale des paiements </h3>
+                    <p class="mt-2 text-3xl font-bold text-blue-600"> {{ $pourcentageTotal }}% </p>
                 </div>
-
-
-
-
             </div>
-
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
                 <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6 ">
