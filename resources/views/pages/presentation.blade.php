@@ -2,7 +2,7 @@
 @extends('layouts.users.layout-user')
 
 @section('content')
- <div id="particles-js" class="fixed top-0 left-0 w-full h-full -z-10"></div>
+ {{-- <div id="particles-js" class="fixed top-0 left-0 w-full h-full -z-10"></div> --}}
 <section class="max-w-4xl mx-auto py-12 px-4 ">
     <header class="w-full lg:max-w-4xl max-w-[335px] text-sm mb-6 not-has-[nav]:hidden">
         @if (Route::has('login'))
