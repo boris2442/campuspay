@@ -153,8 +153,21 @@
         <div class="text-red-500 text-sm mt-1">{{ $message }}</div>
         @enderror
     </div>
-    <script>
-        function previewImage(event) {
+
+
+
+    <!-- Bouton soumettre -->
+    <div class="pt-4">
+        <button type="submit"
+            class="w-full sm:w-auto px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-md shadow transition duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+            Update l'étudiant
+        </button>
+    </div>
+    </form>
+    </div>
+</section>
+<script>
+    function previewImage(event) {
     const input = event.target;
     const preview = document.getElementById('photoPreview');
 
@@ -178,18 +191,6 @@
         reader.readAsDataURL(input.files[0]);
     }
 }
-    </script>
+</script>
 
-
-
-    <!-- Bouton soumettre -->
-    <div class="pt-4">
-        <button type="submit"
-            class="w-full sm:w-auto px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-md shadow transition duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-            Update l'étudiant
-        </button>
-    </div>
-    </form>
-    </div>
-</section>
 @endsection
