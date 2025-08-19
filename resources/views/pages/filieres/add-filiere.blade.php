@@ -31,16 +31,6 @@
                 @enderror
             </div>
 
-            <!-- Matricule de la filière -->
-            {{-- <div>
-                <label for="matricule_filiere" class="block text-sm font-medium mb-1">Matricule de la filière</label>
-                <input type="text" id="matricule_filiere" name="matricule_filiere" placeholder="Ex : INF-01" required
-                    class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white" />
-            </div> --}}
-
-
-
-
             <!-- Bouton soumettre -->
             <div class="pt-4">
                 <button type="submit"

@@ -1,4 +1,4 @@
-{{-- filepath: c:\laragon\www\campuspay\resources\views\pages\filieres\list-filiere.blade.php --}}
+
 @extends('layouts.admin.layout-admin')
 @section('title', 'Liste des filieres')
 @section('content')

@@ -37,18 +37,18 @@
 
 <body>
     <div class="flex h-screen
-     {{-- bg-gray-100 --}}
+
       dark:bg-gray-900">
-        {{-- @include('components.dashboard.aside') --}}
+
         <div class="flex-1 flex flex-col">
-            {{-- @include('components.dashboard.header') --}}
+   
             <main class="flex-1  p-6">
                 @yield('content')
             </main>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-{{-- <script src="{{ mix('js/app.js') }}"></script> --}}
+
 
 </body>
 

@@ -40,20 +40,6 @@
 <body>
 
 
-
-
-    {{-- <div class="flex h-screen bg-gray-100 dark:bg-gray-900">
-        @include('components.dashboard.aside')
-        <div class="flex-1 flex flex-col">
-            @include('components.dashboard.header')
-            <main class="flex-1 overflow-y-auto p-6 ml-64">
-                @yield('content')
-            </main>
-        </div>
-    </div> --}}
-
-
-
     <div class="flex h-screen bg-gray-100 dark:bg-gray-900">
         @include('components.dashboard.aside')
         <div class="flex-1 flex flex-col">
@@ -63,15 +49,14 @@
             </main>
         </div>
     </div>
-    {{-- <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script> --}}
-    {{-- <script src="{{ asset('js/app.js') }}"></script> --}}
+    
 
     <!-- Popper.js (nécessaire pour Tippy.js) -->
     <script src="https://unpkg.com/@popperjs/core@2"></script>
 
     <!-- Tippy.js -->
     <script src="https://unpkg.com/tippy.js@6"></script>
-    {{-- <script srcc="{{ asset('js/tippy.js') }}"></script> --}}
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
         tippy('[data-tippy-content]', {

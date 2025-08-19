@@ -1,4 +1,4 @@
-{{-- filepath: c:\laragon\www\campuspay\resources\views\pages\niveaux\list-niveau.blade.php --}}
+
 @extends('layouts.admin.layout-admin')
 @section('title', 'Liste des niveaux')
 @section('content')

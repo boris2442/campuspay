@@ -18,20 +18,7 @@
                 {{ session('success') }}
             </div>
             @endif
-            <!-- Message d'erreur -->
-            {{-- @if ($errors->any())
-            <div class="bg-red-100 text-red-800 p-4 rounded-md mb-4">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-            @endif --}}
-
-
-            <!-- Nom et Prénom -->
-            {{-- <div class="grid grid-cols-1 md:grid-cols-2 gap-6"> --}}
+          
                 <div>
                     <label for="nom" class="block text-sm font-medium mb-1">Nom de l'etudiant</label>
                     <input type="text" id="nom" name="name" placeholder="Doe" required

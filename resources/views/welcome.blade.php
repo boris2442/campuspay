@@ -93,20 +93,13 @@
                 Conçue pour les établissements d’enseignement, cette plateforme vous aide à centraliser la gestion des
                 étudiants, suivre les paiements, et éditer des rapports rapidement.
             </p>
-            <div {{-- class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center" --}}>
-                {{-- <a href="/register"
-                    class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
-                    Créer un compte
-                </a> --}}
-                {{-- @if(Route::has('login')) --}}
-                {{-- @guest --}}
+            <div>
+
                 <a href="{{ route('presentation') }}"
                     class="px-6 py-3 border-2 border-white hover:bg-blue-50 dark:hover:bg-gray-700 text-blue-600 dark:text-blue-400 font-semibold rounded-lg transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 bg-white max-w-[200px]">
                     Voir plus
                 </a>
-                {{-- @endguest --}}
-
-                {{-- @endif --}}
+               
             </div>
         </div>
 
@@ -122,7 +115,6 @@
 
         </div>
 
-
     </footer>
 
 
@@ -133,8 +125,6 @@
     <script src="https://cdn.jsdelivr.net/npm/typewriter-effect@2.18.0/dist/core.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="{{asset('js/typewritter.js')}}"></script>
-
-    {{-- <script src="{{ asset('js/particles-config.js') }}"></script> --}}
 </body>
 
 </html>

@@ -10,12 +10,6 @@
 
     <form action="{{ route('frais.store') }}" method="POST" class="space-y-6">
       @csrf
-      <!-- ID du frais -->
-      {{-- <div>
-        <label for="id_frais" class="block text-sm font-medium mb-1">ID du frais</label>
-        <input type="number" id="id_frais" name="id_frais" placeholder="Entrez l'ID du frais" required
-          class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white" />
-      </div> --}}
 
       <!-- Tranches et restes -->
       <div class="grid grid-cols-1  gap-6">
@@ -30,12 +24,7 @@
           @enderror
 
         </div>
-        {{-- <div>
-          <label for="reste_tranche1" class="block text-sm font-medium mb-1">Reste tranche 1</label>
-          <input type="number" step="0.01" id="reste_tranche1" name="reste_tranche1" placeholder="Reste de la tranche 1"
-            required
-            class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white" />
-        </div> --}}
+       
       </div>
 
       <div class="grid grid-cols-1  gap-6">
@@ -49,12 +38,7 @@
           <div class="text-red-500 text-sm mt-1">{{ $message }}</div>
           @enderror
         </div>
-        {{-- <div>
-          <label for="reste_tranche2" class="block text-sm font-medium mb-1">Reste tranche 2</label>
-          <input type="number" step="0.01" id="reste_tranche2" name="reste_tranche2" placeholder="Reste de la tranche 2"
-            required
-            class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white" />
-        </div> --}}
+     
       </div>
 
       <div class="grid grid-cols-1  gap-6">
@@ -68,12 +52,7 @@
           <div class="text-red-500 text-sm mt-1">{{ $message }}</div>
           @enderror
         </div>
-        {{-- <div>
-          <label for="reste_tranche3" class="block text-sm font-medium mb-1">Reste tranche 3</label>
-          <input type="number" step="0.01" id="reste_tranche3" name="reste_tranche3" placeholder="Reste de la tranche 3"
-            required
-            class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white" />
-        </div> --}}
+   
       </div>
 
       <!-- Bouton soumettre -->

@@ -34,12 +34,7 @@
             </div>
 
 
-            {{-- <div class="flex flex-wrap gap-4"> --}}
-                {{-- <a href="{{ route('students.create') }}"
-                    class="flex items-center gap-2 bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 transition shadow">
-                    <i class="fa fa-student-plus"></i> Ajouter un étudiant
-                </a> --}}
-
+          
                 <a href="{{ route('frais.exportPdfUser') }}"
                     class="flex items-center gap-2 bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 transition shadow">
                     <i class="fa fa-file-pdf"></i> Exporter PDF

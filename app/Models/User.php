@@ -7,63 +7,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-// class User extends Authenticatable
-// {
-
-   
-//     use HasFactory, Notifiable;
-//     public function specialite()
-//     {
-//         return $this->belongsTo(Specialite::class);
-//     }
-//     public function niveau()
-//     {
-//         return $this->belongsTo(Niveau::class);
-//     }
-//     public function filiere()
-//     {
-//         return $this->belongsTo(Filiere::class);
-//     }
-//     public function frais()
-//     {
-//         return $this->hasMany(Frai::class);
-//     }
-//     public function paiements()
-//     {
-//         return $this->hasMany(Paiement::class);
-//     }
-   
-//     protected $fillable = [
-//         'name',
-//         'email',
-//         'password',
-//         'date_naissance',
-//         'role',
-//         'lieu_de_naissance',
-//         'telephone',
-//         'adresse',
-//         'prenom',
-//         'photo',
-//         'filiere_id',
-//         'specialite_id',
-//         'niveau_id',
-//     ];
-
-   
-//     protected $hidden = [
-//         'password',
-//         'remember_token',
-//     ];
-
-   
-//     protected function casts(): array
-//     {
-//         return [
-//             'email_verified_at' => 'datetime',
-//             'password' => 'hashed',
-//         ];
-//     }
-// }
 
 
 class User extends Authenticatable
