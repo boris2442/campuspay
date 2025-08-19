@@ -7,6 +7,11 @@ import Alpine from 'alpinejs';
 //         console.log('Particles.js config loaded');
 //     });
 // };
+// particlesJS.load('particles-js', "{{ asset('particles.json') }}", function() {
+//     console.log('Particles loaded');
+// });
+
+
 window.Alpine = Alpine;
 
 Alpine.start();

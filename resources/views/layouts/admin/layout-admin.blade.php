@@ -63,6 +63,9 @@
             </main>
         </div>
     </div>
+    {{-- <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script> --}}
+    {{-- <script src="{{ asset('js/app.js') }}"></script> --}}
+
     <!-- Popper.js (nécessaire pour Tippy.js) -->
     <script src="https://unpkg.com/@popperjs/core@2"></script>
 
