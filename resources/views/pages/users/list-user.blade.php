@@ -34,14 +34,13 @@
             </div>
 
 
-          
-                <a href="{{ route('frais.exportPdfUser') }}"
-                    class="flex items-center gap-2 bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 transition shadow">
-                    <i class="fa fa-file-pdf"></i> Exporter PDF
-                </a>
 
-                {{--
-            </div> --}}
+            <a href="{{ route('frais.exportPdfUser') }}"
+                class="flex items-center gap-2 bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 transition shadow">
+                <i class="fa fa-file-pdf"></i> Exporter PDF
+            </a>
+
+
         </div>
 
         {{-- FORMULAIRE DE RECHERCHE --}}
@@ -49,18 +48,18 @@
             class="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg shadow-sm mb-6 space-y-4">
             <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 <input type="text" name="name" placeholder="Rechercher par nom" value="{{ request('name') }}"
-                    class="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 w-full" />
+                    class="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 w-full max-w-[400px]" />
                 <input type="text" name="email" placeholder="Rechercher par Email" value="{{ request('email') }}"
-                    class="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 w-full" />
+                    class="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 w-full max-w-[400px]" />
                 <select name="sexe"
-                    class="border border-gray-300 rounded-md px-3 py-2 bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-400 w-full">
+                    class="border border-gray-300 rounded-md px-3 py-2 bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-400 w-full max-w-[400px]">
                     <option value="">Filtrer les étudiants par sexe</option>
                     <option value="Masculin" {{ request('sexe')=='Masculin' ? 'selected' : '' }}>Masculin</option>
                     <option value="Feminin" {{ request('sexe')=='Feminin' ? 'selected' : '' }}>Feminin</option>
                 </select>
                 <input type="text" name="annee_naissance" placeholder="Année de naissance (ex: 2002)"
                     value="{{ request('annee_naissance') }}"
-                    class="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 w-full" />
+                    class="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 w-full max-w-[400px]" />
             </div>
             <div class="flex flex-wrap items-center gap-4 mt-4">
                 <button type="submit"
@@ -76,14 +75,19 @@
 
         {{-- IMPORT EXCEL --}}
         <form action="{{ route('etudiants.import') }}" method="POST" enctype="multipart/form-data"
-            class="mb-6 bg-white dark:bg-gray-800 p-4 rounded-md shadow-sm flex flex-col sm:flex-row gap-4 items-center">
+            class="mb-6 bg-white dark:bg-gray-800 p-4 rounded-md shadow-sm flex flex-col  gap-4 items-center">
             @csrf
-            <input type="file" name="file" required class="border px-3 py-2 rounded-md w-full max-w-sm" />
+            <input type="file" name="file" required class="border px-3 py-2 rounded-md w-full  max-w-[400px]" />
             <button type="submit"
                 class="flex items-center gap-2 bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 transition">
                 <i class="fa fa-upload"></i> Importer
             </button>
         </form>
+
+
+
+
+
 
         @error('file')
         <div class="bg-red-100 text-red-800 p-4 rounded mb-4 shadow-sm">
@@ -134,10 +138,10 @@
                         {{-- <td class="px-4 py-3">{{ $student->role }}</td> --}}
                         <td class="px-4 py-3">{{ $student->prenom }}</td>
                         <td class="px-4 py-3">{{ $student->statut_paiement }}</td>
-                        <td class="px-4 py-3"><a href="{{ route('students.paiements', $student->id) }}" 
-                       class="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600">
-                        Voir
-                    </a></td>
+                        <td class="px-4 py-3"><a href="{{ route('students.paiements', $student->id) }}"
+                                class="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600">
+                                Voir
+                            </a></td>
                         <td class="px-4 py-3">{{ $student->email }}</td>
                         <td class="px-4 py-3">{{ $student->filiere->name ?? 'N/A' }}</td>
                         <td class="px-4 py-3">{{ $student->specialite->name ?? 'N/A' }}</td>
